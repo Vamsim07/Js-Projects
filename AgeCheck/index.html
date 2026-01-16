@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background-color: bisque;
+    }
+    .container{
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Age Checking For Riding</h1>
+            <label for="rider">Enter U'r Age : </label>
+            <input type="text" id="rider" placeholder="Enter Your Age : ">
+            <br><br>
+        <button type="submit" id="Mysub">Submit</button><br>
+        <h3 id="Result"></h3>
+    </div>
+    
+    <script>
+
+        const gdata = document.getElementById("rider");
+        const Dsubmit = document.getElementById("Mysub");
+        const Dresult = document.getElementById("Result");
+        
+        let age;
+
+        Dsubmit.onclick = function(){
+            age = Number(gdata.value);
+
+            if(isNaN(age) || age <= 0){
+                Dresult.textContent = `Enter a Valid Number..!`;
+                Dresult.style.color = `Orange`;
+            }
+            else if(age >70 || age < 18){
+                Dresult.textContent = "your not able to drive";
+                Dresult.style.color = "Red";
+            } else{
+                Dresult.textContent = "Enjoy your driving..!";
+                Dresult.style.color = "Green";
+            }
+            gdata.value = "";
+
+        }
+
+
+
+    </script>
+</body>
+</html>
